@@ -14,9 +14,10 @@ To setup nginx server do the following:
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 To setup hello world website with nginx do the following:
-# This was done using dockerfile. An image was built using this dockerfile and pushed to my docker hub account. Anyone can pull this image and run it on their system.
+# This was done using dockerfile. An image was built using this dockerfile and pushed to my docker hub account. Anyone can pull this 
+image and run it on their system.
 - docker pull doc6789/nginx-hello_world:latest
-# This will pull the image that I created. Now we have to just run this images as a container and check our hello world website on browser
+# This will pull the image that I created. Now we have to just run this images as a container and check our hello world website on browser.
 - docker run --name myngnix -it -d -p 8080:80 doc6789/nginx-hello_world
 # Now just open your browser and go to : http://localhost:8080
 
