@@ -1,0 +1,25 @@
+AIM : Setup ‘MongoDB’ using docker
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# Fistly we need to pull the official image of MongoDB from docker hub. 
+- docker pull mongo:latest
+# Once the image is successfully pulled, we have to create a container from this image. 
+- docker run -d -it -p 27017:27017 --name my-mongodb mongo:latest
+# Now our container : my-mongodb is up and running. Now we can interact with this container using bash shell of the container.
+- docker exec -it my-mongodb bash
+# This will open the bash terminal of container. To launch the MongoDB shell client, execute the following:
+- mongo
+# MongoDB shell client will open, normal functionality of MongoDB can be performed here. Now we can add/create database and interact with
+the container and save changes (if a volume is mounted on the host file system). To create a database:
+- use mydb
+# Our new database is created. To create a collection with data, we can do something like this:
+- db.people.save({ firstname : "BoJack", lastname : "Horseman" })
+- db.people.save({ firstname : "Thomas", lastname : "Shellby" })
+# With two documents created in a new people collection in our mydb database, we can query for data using something like the following:
+- db.people.find({ firstname : "Thomas" })
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+This will verify that MongoDB is interacting with the desktop client.
+
