@@ -1,0 +1,30 @@
+This file for combined task 1 and 2 from level 0.
+
+AIM : Setup ‘NGINX’ server using docker and Setup simple hello world website using ‘NGINX’ server using docker.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+To setup nginx server do the following:
+# To pull official nginx image from docker hub.
+- docker pull nginx:latest 
+# To run a container named "my-nginx-1" for the nginx image that we just pulled
+- docker run --name my-nginx-1 -d -it -p 8080:80 nginx:latest
+# This will run a container in background. To check wheter nginx is up or not visit : http://localhost:8080 on any browser.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+To setup hello world website with nginx do the following:
+# This was done using dockerfile. An image was built using this dockerfile and pushed to my docker hub account. Anyone can pull this image and run it on their system.
+- docker pull doc6789/nginx-hello_world:latest
+# This will pull the image that I created. Now we have to just run this images as a container and check our hello world website on browser
+- docker run --name myngnix -it -d -p 8080:80 doc6789/nginx-hello_world
+# Now just open your browser and go to : http://localhost:8080
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Dockerfile used to setup hello world website with nginx:
+
+FROM nginx:latest
+ADD index.html /usr/share/nginx/html/
+RUN chmod +r /usr/share/nginx/html/index.html
+CMD ["nginx", "-g", "daemon off;"]
