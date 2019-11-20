@@ -1,0 +1,15 @@
+AIM : Create your own dockerfile to install Python. 
+__________________________________________________________________________________________________________________________________________
+
+Here python will be installed and a python script file will be executed to check whether our python image is running or not. This python script is a simple server which will host a html file resulting "Hey there !" text as output.
+__________________________________________________________________________________________________________________________________________
+
+- Dockerfile is written as a seperate text document to install python, run some python file and expose ports. This Dockerfile is also attached in this repository.
+
+# Once the dockerfile is created we need to build the image out of the dockerfile. To this give the following command (make sure you are in same directory where your dockerfile is saved):
+- docker build -t doc6789/python-server .
+
+# this image has been created by me and pushed to my docker hub. Anyone can pull this image and run it by typing the following command:
+- docker run -it -p 8890:8890 doc6789/python-server
+
+# Your container will be up and running. To check the output go to "http://localhost:8890/". Here the port 8890 is used by the host machine and it is coded in the python script. 
