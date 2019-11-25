@@ -1,0 +1,9 @@
+FROM python:3-alpine
+
+MAINTAINER Atish Sonawane
+
+ADD . /app
+
+WORKDIR /app
+
+CMD ["python", "server.py"]
