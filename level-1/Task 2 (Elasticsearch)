@@ -1,0 +1,26 @@
+------------------------------------------------------------------------------------------------------------------------------------------
+
+AIM : Create your own dockerfile to setup Elasticsearch.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+- Create your own dockerfile to setup single node ES cluster.
+- Expose required ports.
+- Install ES plugins.
+- Verify installation by accessing through web browser.
+- Publish your image to docker hub registry.
+
+Dockerfile to create elastic search image is attached to this repository.
+Before building the image from this dockerfile, create a config directory in the current directory and add elasticsearch.yml to it. elasticsearch.yml is also attached in this repository.
+
+To build this dockerfile give the following command :
+- docker build -t doc6789/elasticsearch .
+
+Here doc6789 is my dockerhub username. This image has already been created by me and pushed to my docker hub, anyone can pull thi images using the command :
+- docker pull doc6789/elasticsearch
+
+Once the image is ready on the system we have to run this image, to do so type the following commmand :
+- docker run -d -p 9200:9200 doc6789/elasticsearch
+
+Here port 9200 is container port and host port is also 9200 which can be changed if you want. To see the result of this container go to the browser and type "http://localhost:9200/". 
+__________________________________________________________________________________________________________________________________________
