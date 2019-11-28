@@ -18,3 +18,10 @@ AIM : Use Docker-Compose to setup multi container ELK stack.
 "http://localhost:9200/" for elasticsearch and
 "http://localhost:5601/" for kibana. 
 
+* Currently no data is loaded into kibana to present but sample data could be added and visualised in kibana. 
+
+- To stop and remove the containers all at once type:
+- docker-compose down
+
+
+
