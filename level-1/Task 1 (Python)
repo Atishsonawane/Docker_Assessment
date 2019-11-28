@@ -13,3 +13,5 @@ ________________________________________________________________________________
 - docker run -it -p 8890:8890 doc6789/python-server
 
 # Your container will be up and running. To check the output go to "http://localhost:8890/". Here the port 8890 is used by the host machine and it is coded in the python script. 
+ 
+ _________________________________________________________________________________________________________________________________________
