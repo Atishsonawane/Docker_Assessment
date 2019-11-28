@@ -1,0 +1,20 @@
+------------------------------------------------------------------------------------------------------------------------------------------
+AIM : Use Docker-Compose to setup multi container ELK stack.
+
+- Create your own docker compose file to setup Elasticsearch, logstash and Kibana (ELK) stack.
+- Expose required ports as needed.
+- Create the stack and test it.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+- The required docker-compose file (docker-compose.yml) is attached to this repository. 
+- This file will pull the Elasticsearch, logstash and Kibana images from docker hub.
+- It also create volumes for the necessary configuration files that are present in this repository. 
+- Add these config files to your current directory in the same fashion as done in this repository.
+- Once the docker-compose file and config files are ready, we can start our docker-compose and create containers. To start type this:
+- docker-compose up -d
+- This will pull the images and run them as containers.
+- To check the results, go to:
+"http://localhost:9200/" for elasticsearch and
+"http://localhost:5601/" for kibana. 
+
